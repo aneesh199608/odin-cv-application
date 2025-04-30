@@ -1,4 +1,4 @@
-export default GeneralPreview({ data }) {
+export default function GeneralPreview({ data }) {
     return (
         <aside className="preview">
         <h2>{data.fullName}</h2>
