@@ -8,28 +8,64 @@ export default function BasicDetailsForm( { data, onChange }) {
 
     return (
         <form className="form">
-            <h1>Create your resume</h1>
-            <p className="subtitle">
-                Let's get started. Fill in the details below to create your resume.
-            </p>
-
+            <h2>Basic Details</h2>
             <label>Full Name *
                 <input 
                     name="fullName"
                     value={data.fullName}
                     onChange={handle}
-                    placeholder="Name"
+                    placeholder="Virat Kohli"
                     required
                  />
             </label>
 
-            <label>Job Title (optional)
+            <label>Job Title (use industry recommended terminology)
                 <input 
                     name="jobTitle"
                     value={data.jobTitle}
                     onChange={handle}
-                    placeholder="Title"
+                    placeholder="Product Designer"
                     required
+                 />
+            </label>
+
+            <label>Email ID *
+                <input 
+                    name="email"
+                    value={data.email}
+                    onChange={handle}
+                    placeholder="xyz@abc.com"
+                    required
+                 />
+            </label>
+
+            <label>Phone Number
+                <input 
+                    name="phone"
+                    type="number"
+                    value={data.phone}
+                    onChange={handle}
+                    placeholder="1234567890"
+                 />
+            </label>
+
+            <label>City (currently working from)
+                <input 
+                    name="location"
+                    type="text"
+                    value={data.location}
+                    onChange={handle}
+                    placeholder="Chennai, TN"
+                 />
+            </label>
+
+            <label>Summary
+                <input 
+                    name="summary"
+                    type="text"
+                    value={data.summary}
+                    onChange={handle}
+                    placeholder="A motivated professional with 5+ years of experience in software development."
                  />
             </label>
 
