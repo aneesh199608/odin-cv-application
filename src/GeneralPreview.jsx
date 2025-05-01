@@ -1,8 +1,8 @@
 export default function GeneralPreview({ data }) {
     return (
         <aside className="preview">
-        <h2>{data.fullName}</h2>
-        <p>{data.jobTitle}</p>
+        <h3>{data.general.fullName}</h3>
+        <p>{data.general.jobTitle}</p>
         </aside>
     );
 }

@@ -39,7 +39,7 @@ export default function App() {
             }
           />
         )}
-        {/* <GeneralPreview resume={resume} /> */}
+        <GeneralPreview data={resume} />
       </div>
     </>
   );
