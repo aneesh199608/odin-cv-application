@@ -4,16 +4,21 @@ import GeneralForm from './GeneralForm';
 import GeneralPreview from './GeneralPreview';
 
 export default function App() {
-  const [general, setGeneral] = useState({
-    fullName: '',
-    jobTitle: '',
+  const [resume, setResume] = useState({
+    general: { fullName: '', jobTitle: '', email: '', phone: '', location: '', summary: ''},
+    education: [],
+    experience: [],
+    theme: { headerColor: '#ccefff'}
   });
+
+  const [step, setStep] = useState('0');
 
   return (
     <>
       <div className="app">
-        <GeneralForm data={general} onChange={setGeneral} />
-        <GeneralPreview data={general} />
+        <FormHeader />
+        <SectionToggle step={step} setStep={setStep} />
+        <GeneralPreview resume={resume} />
       </div>
     </>
   );
