@@ -4,11 +4,12 @@ import BasicDetailsForm from './components/BasicDetailsForm';
 import GeneralPreview from './GeneralPreview';
 import FormHeader from './components/FormHeader';
 import SectionToggle from './components/SectionToggle';
+import EducationForm from './components/EducationForm';
 
 export default function App() {
   const [resume, setResume] = useState({
     general: { fullName: '', jobTitle: '', email: '', phone: '', location: '', summary: ''},
-    education: [],
+    education: { degree: '', college: ''},
     experience: [],
     theme: { headerColor: '#ccefff'}
   });
@@ -23,6 +24,15 @@ export default function App() {
         <p>Current Section: {step}</p>
         {step === '0' && (
           <BasicDetailsForm
+            data={resume.general}
+            onChange={(general) =>
+              setResume({...resume,general})
+            }
+          />
+        )}
+
+        {step === '1' && (
+          <EducationForm
             data={resume.general}
             onChange={(general) =>
               setResume({...resume,general})

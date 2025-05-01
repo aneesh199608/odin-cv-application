@@ -8,32 +8,30 @@ export default function EducationForm( { data, onChange }) {
 
     return (
         <form className="form">
-            <h1>Create your resume</h1>
-            <p className="subtitle">
-                Let's get started. Fill in the details below to create your resume.
-            </p>
+            <h2>Education Details</h2>
 
-            <label>Full Name *
+            <label>Degree *
                 <input 
-                    name="fullName"
-                    value={data.fullName}
+                    name="degree"
+                    value={data.degree}
                     onChange={handle}
-                    placeholder="Name"
+                    placeholder="B. Tech"
                     required
                  />
             </label>
 
-            <label>Job Title (optional)
+            <label>College *
                 <input 
-                    name="jobTitle"
-                    value={data.jobTitle}
+                    name="college"
+                    value={data.college}
                     onChange={handle}
-                    placeholder="Title"
+                    placeholder="SRM University"
                     required
                  />
             </label>
 
-            <button type="button">Next</button>
+            <button className="secondary-button" type="button">Previous</button>
+            <button className="primary-button" type="button">Next</button>
         </form>
     )
 }
