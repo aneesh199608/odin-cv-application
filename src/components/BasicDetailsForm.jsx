@@ -1,4 +1,4 @@
-export default function GeneralForm( { data, onChange }) {
+export default function BasicDetailsForm( { data, onChange }) {
 
     const handle = (e) => {
         onChange({

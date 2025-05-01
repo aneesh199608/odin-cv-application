@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './style.css'
-import GeneralForm from './GeneralForm';
+import BasicDetailsForm from './components/BasicDetailsForm';
 import GeneralPreview from './GeneralPreview';
 import FormHeader from './components/FormHeader';
 
@@ -18,8 +18,8 @@ export default function App() {
     <>
       <div className="app">
         <FormHeader />
-        <SectionToggle step={step} setStep={setStep} />
-        <GeneralPreview resume={resume} />
+        {/* <SectionToggle step={step} setStep={setStep} /> */}
+        {/* <GeneralPreview resume={resume} /> */}
       </div>
     </>
   );
