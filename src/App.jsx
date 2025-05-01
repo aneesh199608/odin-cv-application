@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './style.css'
 import GeneralForm from './GeneralForm';
 import GeneralPreview from './GeneralPreview';
+import FormHeader from './components/FormHeader';
 
 export default function App() {
   const [resume, setResume] = useState({
