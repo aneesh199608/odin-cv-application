@@ -3,6 +3,7 @@ import './style.css'
 import BasicDetailsForm from './components/BasicDetailsForm';
 import GeneralPreview from './GeneralPreview';
 import FormHeader from './components/FormHeader';
+import SectionToggle from './components/SectionToggle';
 
 export default function App() {
   const [resume, setResume] = useState({
@@ -18,7 +19,16 @@ export default function App() {
     <>
       <div className="app">
         <FormHeader />
-        {/* <SectionToggle step={step} setStep={setStep} /> */}
+        <SectionToggle step={step} setStep={setStep} />
+        <p>Current Section: {step}</p>
+        {step === '0' && (
+          <BasicDetailsForm
+            data={resume.general}
+            onChange={(general) =>
+              setResume({...resume,general})
+            }
+          />
+        )}
         {/* <GeneralPreview resume={resume} /> */}
       </div>
     </>
