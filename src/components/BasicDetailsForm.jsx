@@ -60,9 +60,8 @@ export default function BasicDetailsForm( { data, onChange }) {
             </label>
 
             <label>Summary
-                <input 
+                <textarea 
                     name="summary"
-                    type="text"
                     value={data.summary}
                     onChange={handle}
                     placeholder="A motivated professional with 5+ years of experience in software development."
