@@ -1,4 +1,5 @@
 export default function BasicDetailsForm( { data, onChange }) {
+    console.log('Rendering Basic Details Form');
 
     const handle = (e) => {
         onChange({

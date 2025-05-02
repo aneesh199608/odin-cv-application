@@ -1,4 +1,7 @@
-export default function FormHeader() {
+import React from "react";
+
+const FormHeader = React.memo(function FormHeader() {
+    console.log('Rendering Header Form');
     return (
         <header className="form-header">
             <div className="form-header-text">
@@ -8,4 +11,6 @@ export default function FormHeader() {
             </div>
         </header>
     );
-}
+});
+
+export default FormHeader;

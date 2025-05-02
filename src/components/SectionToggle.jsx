@@ -1,4 +1,7 @@
-export default function SectionToggle({ step, setStep }) {
+import React from "react";
+
+const SectionToggle = React.memo(function SectionToggle({ step, setStep }) {
+    console.log('Rendering SectionToggle');
     const sections = [
         { id: '0', label: 'Basic', text: 'Basic'},
         { id: '1', label: 'Education', text: 'Education'},
@@ -20,4 +23,6 @@ export default function SectionToggle({ step, setStep }) {
             ))}
         </div>
     );
-}
+});
+
+export default SectionToggle;

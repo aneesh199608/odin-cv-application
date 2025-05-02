@@ -1,4 +1,5 @@
 export default function EducationForm( { data, onChange }) {
+    console.log('Rendering Education Form');
 
     const addEntry = () => {
         onChange([
