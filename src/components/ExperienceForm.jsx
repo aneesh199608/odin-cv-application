@@ -1,5 +1,5 @@
-export default function EducationForm( { data, onChange }) {
-
+export default function ExperienceForm( { data, onChange, setStep }) {
+    console.log('Rendering Experience Form')
     const handle = (e) => {
         onChange({
             ...data, [e.target.name]: e.target.value
@@ -12,26 +12,26 @@ export default function EducationForm( { data, onChange }) {
 
             <label>Job Role *
                 <input 
-                    name="degree"
-                    value={data.degree}
+                    name="jobRole"
+                    value={data.jobRole}
                     onChange={handle}
-                    placeholder="B. Tech"
+                    placeholder="Product Designer"
                     required
                  />
             </label>
 
-            <label>College *
+            <label>Company *
                 <input 
-                    name="college"
+                    name="company"
                     value={data.college}
                     onChange={handle}
-                    placeholder="SRM University"
+                    placeholder="Microsoft"
                     required
                  />
             </label>
 
-            <button className="secondary-button" type="button">Previous</button>
-            <button className="primary-button" type="button">Next</button>
+            <button className="secondary-button" type="button" onClick={() => setStep('1')}>Previous</button>
+            <button className="primary-button" type="button" onClick={() => setStep('3')}>Next</button>
         </form>
     )
 }

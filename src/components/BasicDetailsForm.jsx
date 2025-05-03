@@ -1,4 +1,4 @@
-export default function BasicDetailsForm( { data, onChange }) {
+export default function BasicDetailsForm( { data, onChange, setStep }) {
     console.log('Rendering Basic Details Form');
 
     const handle = (e) => {
@@ -69,7 +69,7 @@ export default function BasicDetailsForm( { data, onChange }) {
                  />
             </label>
 
-            <button type="button">Next</button>
+            <button type="button" onClick={() => setStep('1')}>Next</button>
         </form>
     )
 }

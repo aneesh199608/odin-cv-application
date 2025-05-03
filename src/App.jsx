@@ -5,6 +5,7 @@ import GeneralPreview from './GeneralPreview';
 import FormHeader from './components/FormHeader';
 import SectionToggle from './components/SectionToggle';
 import EducationForm from './components/EducationForm';
+import ExperienceForm from './components/ExperienceForm';
 
 export default function App() {
   const [resume, setResume] = useState({
@@ -29,6 +30,7 @@ export default function App() {
             onChange={(general) =>
               setResume({...resume,general})
             }
+            setStep = {setStep}
           />
         )}
 
@@ -38,6 +40,7 @@ export default function App() {
             onChange={(education) =>
               setResume({...resume,education: education})
             }
+            setStep = {setStep}
           />
         )}
 
@@ -47,8 +50,19 @@ export default function App() {
             onChange={(experience) =>
               setResume({...resume,experience: experience})
             }
+            setStep = {setStep}
           />
         )}
+
+        {/* {step === '3' && (
+          <Customize
+            data={resume.customize}
+            onChange={(customize) =>
+              setResume({...resume,customize: customize})
+            }
+            setStep = {setStep}
+          />
+        )} */}
 
         <GeneralPreview data={resume} />
       </div>

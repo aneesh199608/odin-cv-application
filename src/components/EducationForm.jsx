@@ -1,4 +1,4 @@
-export default function EducationForm( { data, onChange }) {
+export default function EducationForm( { data, onChange, setStep }) {
     console.log('Rendering Education Form');
 
     const addEntry = () => {
@@ -59,8 +59,8 @@ export default function EducationForm( { data, onChange }) {
 
 ))}
 
-            <button className="secondary-button" type="button">Previous</button>
-            <button className="primary-button" type="button">Next</button>
+            <button className="secondary-button" type="button" onClick={() => setStep('0')}>Previous</button>
+            <button className="primary-button" type="button" onClick={() => setStep('2')}>Next</button>
         </form>
     );
 }
