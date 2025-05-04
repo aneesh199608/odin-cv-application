@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import './style.css'
 import BasicDetailsForm from './components/BasicDetailsForm';
-import GeneralPreview from './GeneralPreview';
+import GeneralPreview from './components/GeneralPreview';
 import FormHeader from './components/FormHeader';
 import SectionToggle from './components/SectionToggle';
 import EducationForm from './components/EducationForm';

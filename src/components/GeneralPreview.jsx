@@ -12,13 +12,15 @@ export default function GeneralPreview({ data }) {
                 </div>
             </div>
             <div className="preview-main">
+            {data.general.summary !== '' && (
                 <div className="summary">
                     <div className="summary-title">
                         {/* <svg></svg> */}
                         <h5 className="summary-text">Summary</h5>
                     </div>
-                    <p className="summary-description">{data.general.summary}</p>
-                </div>
+                        <p className="summary-description">{data.general.summary}</p>
+                    </div>
+            )}
             </div>
 
         
