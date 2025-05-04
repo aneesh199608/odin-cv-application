@@ -20,51 +20,45 @@ export default function App() {
   return (
     <>
       <div className="app">
-        <FormHeader />
-        <SectionToggle step={step} setStep={setStep} />
-        <p>Current Section: {step}</p>
+        <div className="form-column">
+          <FormHeader />
+          <SectionToggle step={step} setStep={setStep} />
+          <p>Current Section: {step}</p>
 
-        {step === '0' && (
-          <BasicDetailsForm
-            data={resume.general}
-            onChange={(general) =>
-              setResume({...resume,general})
-            }
-            setStep = {setStep}
-          />
-        )}
+          {step === '0' && (
+            <BasicDetailsForm
+              data={resume.general}
+              onChange={(general) =>
+                setResume({...resume,general})
+              }
+              setStep = {setStep}
+            />
+          )}
 
-        {step === '1' && (
-          <EducationForm
-            data={resume.education}
-            onChange={(education) =>
-              setResume({...resume,education: education})
-            }
-            setStep = {setStep}
-          />
-        )}
+          {step === '1' && (
+            <EducationForm
+              data={resume.education}
+              onChange={(education) =>
+                setResume({...resume,education: education})
+              }
+              setStep = {setStep}
+            />
+          )}
 
-        {step === '2' && (
-          <ExperienceForm
-            data={resume.experience}
-            onChange={(experience) =>
-              setResume({...resume,experience: experience})
-            }
-            setStep = {setStep}
-          />
-        )}
+          {step === '2' && (
+            <ExperienceForm
+              data={resume.experience}
+              onChange={(experience) =>
+                setResume({...resume,experience: experience})
+              }
+              setStep = {setStep}
+            />
+          )}
+        </div>
 
-        {/* {step === '3' && (
-          <Customize
-            data={resume.customize}
-            onChange={(customize) =>
-              setResume({...resume,customize: customize})
-            }
-            setStep = {setStep}
-          />
-        )} */}
-
-        <GeneralPreview data={resume} />
+        <div className="preview-column">
+          <GeneralPreview data={resume} />
+        </div>
       </div>
     </>
   );
