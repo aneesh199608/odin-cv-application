@@ -1,3 +1,5 @@
+import './BasicDetailsForm.css';
+
 export default function BasicDetailsForm( { data, onChange, setStep }) {
     console.log('Rendering Basic Details Form');
 
