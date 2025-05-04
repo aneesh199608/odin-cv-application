@@ -1,4 +1,5 @@
 import React from "react";
+import './SectionToggle.css';
 
 const SectionToggle = React.memo(function SectionToggle({ step, setStep }) {
     console.log('Rendering SectionToggle');
@@ -10,13 +11,14 @@ const SectionToggle = React.memo(function SectionToggle({ step, setStep }) {
     ];
 
     return (
-        <div className="section-toggle">
+        <div className="section-toggle-container">
             {sections.map((section) => (
                 <button
                     key={section.id}
-                    className={`toggle-button ${step === section.id ? 'active' : ''}`}
+                    className={`section-toggle-button ${step === section.id ? 'active' : ''}`}
                     onClick={() => setStep(section.id)}
                     aria-label={section.label}
+                    type="button"
                     >
                         <span>{section.text}</span>
                     </button>

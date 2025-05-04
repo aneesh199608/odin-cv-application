@@ -1,0 +1,68 @@
+/* src/components/SectionToggle.css */
+
+.section-toggle-container {
+  display: flex;
+  flex-direction: row; /* Align buttons horizontally */
+  align-items: center; /* Vertically align items if container height differs */
+  gap: 12px; /* Figma: gap between buttons */
+  width: 100%; /* Stretch container */
+}
+
+.section-toggle-button {
+  /* Layout & Box Model */
+  display: inline-flex; /* Use inline-flex for icon + text alignment */
+  align-items: center; /* Vertically center icon and text */
+  justify-content: center; /* Horizontally center content */
+  flex-grow: 1; /* Allow buttons to share space equally */
+  padding: 10px 12px; /* Figma: padding */
+  height: 36px; /* Figma: fixed height */
+  border-radius: var(--border-radius-sm); /* Figma: 6px */
+  border: 1px solid transparent; /* Base border, transparent by default */
+
+  /* Typography & Appearance */
+  font-family: var(--font-sans);
+  font-size: 14px; /* Figma: style_7UOK3C */
+  font-weight: 500; /* Figma: style_7UOK3C */
+  line-height: 1; /* Adjust for button height centering */
+  color: var(--primary); /* Figma: fill_3GGR2P */
+  background-color: var(--card-background); /* Default inactive background */
+  border-color: var(--border); /* Default inactive border */
+  box-shadow: var(--shadow-sm); /* Default inactive shadow */
+  cursor: pointer;
+  transition: var(--transition-colors), border-color 150ms ease-out, box-shadow 150ms ease-out;
+  gap: 8px; /* Figma: gap between icon and text */
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Icon styling within button (assuming SVGs) */
+.section-toggle-button svg {
+  width: 16px; /* Adjust size as needed */
+  height: 16px;
+  stroke: var(--primary); /* Figma: stroke_TZWI93 */
+  stroke-width: 1.33px; /* Figma: stroke_TZWI93 */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Hover state for inactive buttons */
+.section-toggle-button:not(.active):hover {
+  background-color: var(--accent); /* Use accent color for hover */
+  border-color: var(--accent);
+}
+
+/* Active state */
+.section-toggle-button.active {
+  background-color: var(--accent); /* Figma: fill_KEPUZ2 */
+  color: var(--accent-foreground);
+  border-color: transparent; /* No border when active */
+  box-shadow: none; /* No shadow when active */
+}
+
+.section-toggle-button.active svg {
+  stroke: var(--accent-foreground);
+}
+
+/* Focus visible state for accessibility */
+.section-toggle-button:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}

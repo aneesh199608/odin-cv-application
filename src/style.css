@@ -10,6 +10,8 @@
   --input-border: var(--border); /* Specific for inputs, can differ */
   --primary: #18181B; /* Figma: fill_NVHU0G (Button Background/Strong Text) */
   --primary-foreground: #FAFAFA; /* Figma: fill_09CO6P (Text on Primary Button) */
+  --accent: #F4F4F5; /* Figma: fill_KEPUZ2 (Active Toggle Background) */
+  --accent-foreground: var(--primary); /* Text on accent background */
 
   /* Spacing & Layout */
   --app-padding: 24px; /* Figma: padding */
@@ -23,6 +25,9 @@
 
   /* Transitions */
   --transition-colors: color 150ms ease-out, background-color 150ms ease-out;
+
+  /* Shadows */
+  --shadow-sm: 0px 1px 2px 0px rgba(0, 0, 0, 0.05); /* Figma: effect_11UGRX */
 }
 
 /* Basic Reset & Body Styles */
