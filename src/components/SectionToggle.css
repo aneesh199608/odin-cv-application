@@ -14,6 +14,7 @@
   align-items: center; /* Vertically center icon and text */
   justify-content: center; /* Horizontally center content */
   flex-grow: 1; /* Allow buttons to share space equally */
+  flex-basis: 0; /* Ensure equal width regardless of content */
   padding: 10px 12px; /* Figma: padding */
   height: 36px; /* Figma: fixed height */
   border-radius: var(--border-radius-sm); /* Figma: 6px */

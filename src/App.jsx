@@ -23,7 +23,7 @@ export default function App() {
         <div className="form-column">
           <FormHeader />
           <SectionToggle step={step} setStep={setStep} />
-          <p>Current Section: {step}</p>
+          {/* <p>Current Section: {step}</p> */}
 
           {step === '0' && (
             <BasicDetailsForm

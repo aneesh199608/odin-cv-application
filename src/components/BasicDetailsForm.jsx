@@ -1,5 +1,3 @@
-import './BasicDetailsForm.css';
-
 export default function BasicDetailsForm( { data, onChange, setStep }) {
     console.log('Rendering Basic Details Form');
 
@@ -12,6 +10,7 @@ export default function BasicDetailsForm( { data, onChange, setStep }) {
     return (
         <form className="form">
             <h2>Basic Details</h2>
+            <div className="form-inputs">
             <label>Full Name *
                 <input 
                     name="fullName"
@@ -45,10 +44,10 @@ export default function BasicDetailsForm( { data, onChange, setStep }) {
             <label>Phone Number
                 <input 
                     name="phone"
-                    type="number"
+                    type="tel"
                     value={data.phone}
                     onChange={handle}
-                    placeholder="1234567890"
+                    placeholder="+91 XXXXXXXXXX"
                  />
             </label>
 
@@ -70,6 +69,7 @@ export default function BasicDetailsForm( { data, onChange, setStep }) {
                     placeholder="A motivated professional with 5+ years of experience in software development."
                  />
             </label>
+            </div>
 
             <button type="button" onClick={() => setStep('1')}>Next</button>
         </form>
