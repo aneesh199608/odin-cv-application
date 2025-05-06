@@ -71,7 +71,7 @@ export default function BasicDetailsForm( { data, onChange, setStep }) {
             </label>
             </div>
 
-            <button type="button" onClick={() => setStep('1')}>Next</button>
+            <button type="button" className="primary-button" onClick={() => setStep('1')}>Next</button>
         </form>
     )
 }

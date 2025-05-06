@@ -1,0 +1,114 @@
+.header-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+.education-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--form-inputs-padding);
+  }
+  
+  /* Add New Button */
+  .form-button.add-new {
+    align-self: flex-end;
+    padding: 8px 16px;
+    height: 36px;
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary);
+    background-color: var(--card-background);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: background-color 150ms ease-out, border-color 150ms ease-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .form-button.add-new:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+  }
+  
+  /* Education Entry */
+  .entry {
+    border: 1px solid var(--border);
+    border-radius: var(--border-radius-md);
+    padding: var(--form-inputs-padding);
+    display: flex;
+    flex-direction: column;
+    gap: var(--form-inputs-padding);
+    background-color: var(--card-background);
+  }
+  
+  /* Entry Header */
+  .entry-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .entry-header h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0;
+  }
+  
+  /* Delete Button Override (fixes global override) */
+  .form-button.delete {
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--base-destructive-foreground, #FEF2F2);
+    background-color: var(--base-destructive, #DC2626);
+    border-radius: var(--border-radius-sm);
+    border: none;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: background-color 150ms ease-out;
+  }
+  
+  .form-button.delete:hover {
+    background-color: #b91c1c; /* slightly darker on hover */
+  }
+  
+  /* Navigation Buttons (Bottom Row) */
+  .secondary-button,
+  .primary-button {
+    margin-top: 8px;
+    height: 36px;
+    width: 100%;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: var(--transition-colors);
+  }
+  
+  .secondary-button {
+    color: var(--primary);
+    background-color: var(--card-background);
+    border: 1px solid var(--border);
+  }
+  
+  .secondary-button:hover {
+    background-color: var(--accent);
+  }
+  
+  .primary-button {
+    color: var(--primary-foreground);
+    background-color: var(--primary);
+    border: none;
+  }
+  
+  .primary-button:hover {
+    background-color: #2F2F32; /* explicit hover fallback */
+  }
+  
