@@ -62,6 +62,7 @@ export default function EducationForm( { data, onChange, setStep }) {
                         />
                     </label>
 
+                    <div className="year-group">
                     <label>Start Year *
                         <input 
                             name="from"
@@ -81,6 +82,7 @@ export default function EducationForm( { data, onChange, setStep }) {
                             required
                         />
                     </label>
+                    </div>
 
                     <label>Score
                         <input 

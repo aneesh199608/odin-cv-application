@@ -248,3 +248,13 @@ p {
 .button-group .primary-button {
   flex: 3;
 }
+
+.year-group {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.year-group label {
+  flex: 1;
+}
