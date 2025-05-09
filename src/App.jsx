@@ -10,17 +10,17 @@ import SectionToggle from './components/SectionToggle';
 import EducationForm from './components/EducationForm';
 import ExperienceForm from './components/ExperienceForm';
 
+const SESSION_KEY = 'resume-data';
+
 export default function App() {
-  const [resume, setResume] = useState({
-    general: { fullName: '', jobTitle: '', email: '', phone: '', location: '', summary: ''},
-    education: [{ id: Date.now(), degree: '', college: '', from: '', to: '', score: '', location: ''}],
-    experience: [{ id: Date.now() + 1, jobRole: '', company: '', from: '', to: '', location: '', summary: '' }],
-    theme: { headerColor: '#ccefff'}
+  const [resume, setResume] = useState(() => {
+    const stored = sessionStorage.getItem(SESSION_KEY);
+    return stored ? JSON.parse(stored) : sampleData;
   });
 
   useEffect(() => {
-    setResume(sampleData);
-  }, []);
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify(resume));
+  }, [resume]);
 
   const [step, setStep] = useState('0');
 

@@ -11,7 +11,7 @@ export const sampleData = {
     education: [
       {
         id: 1,
-        degree: "B. Tech",
+        degree: "B. Tech - ECE",
         college: "VIT University",
         score: "8.6 CGPA",
         from: "2014",
