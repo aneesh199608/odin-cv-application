@@ -77,20 +77,6 @@ body {
   gap: var(--form-inputs-padding);
 }
 
-/* Preview Column (Right Side) */
-.preview-column {
-  flex: 1; /* Allow preview column to grow/shrink */
-  /* Add min-width if needed, e.g., min-width: 400px; */
-  background-color: var(--card-background);
-  border: 1px solid var(--border);
-  border-radius: var(--border-radius-lg);
-  padding: var(--app-padding); /* Add padding inside the preview area */
-  height: fit-content; 
-  min-height: 80vh;
-  max-height: calc(100vh - (2 * var(--app-padding))); /* Prevent exceeding viewport */
-  overflow-y: auto; /* Allow scrolling if content exceeds height */
-}
-
 /* Basic Heading/Text Styles (Example) */
 h1, h2, h3, h4, h5, h6 {
   font-weight: 600; /* Example */

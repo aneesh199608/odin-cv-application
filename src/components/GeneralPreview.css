@@ -1,0 +1,77 @@
+.preview {
+    width: 794px;
+    height: 1123px;
+    border-radius: 20px;
+    padding: 32px;
+    box-sizing: border-box;
+    font-family: var(--font-sans);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 auto; /* center on page */
+    overflow: hidden; /* hide overflow if needed */
+  }
+  /* Header Section */
+  .preview-header {
+    background-color: #E5F4FF; /* light blue */
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 8px;
+    text-align: center;
+    font-family: var(--font-sans);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .header-fullName {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--foreground);
+    margin: 0;
+  }
+  
+  .header-jobTitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--foreground);
+    margin: 0;
+  }
+  
+  .header-contact {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    font-size: 14px;
+    color: var(--muted-foreground);
+  }
+  
+  /* Summary Section (Optional) */
+  .summary {
+    text-align: left;
+    margin-top: 24px;
+  }
+  
+  .summary-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  
+  .summary-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--foreground);
+    margin: 0;
+  }
+  
+  .summary-description {
+    font-size: 14px;
+    color: var(--foreground);
+    line-height: 1.5;
+    margin: 0;
+  }
+  

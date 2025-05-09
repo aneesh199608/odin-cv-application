@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './style.css';
 import './components/EducationForm.css';
+import './components/GeneralPreview.css';
 import BasicDetailsForm from './components/BasicDetailsForm';
 import GeneralPreview from './components/GeneralPreview';
 import FormHeader from './components/FormHeader';

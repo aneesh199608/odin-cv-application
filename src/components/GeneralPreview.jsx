@@ -1,7 +1,8 @@
 export default function GeneralPreview({ data }) {
     console.log('Rendering Preview');
     return (
-        <aside className="preview">
+        <div className="preview-wrapper">
+        <div className="preview">
             <div className="preview-header">
                 <h2 className="header-fullName">{data.general.fullName}</h2>
                 <h4 className="header-jobTitle">{data.general.jobTitle}</h4>
@@ -24,6 +25,7 @@ export default function GeneralPreview({ data }) {
             </div>
 
         
-        </aside>
+        </div>
+        </div>
     );
 }
