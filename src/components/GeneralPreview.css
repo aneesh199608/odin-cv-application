@@ -25,6 +25,12 @@
     gap: 16px;
   }
 
+  .preview-section {
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+
   .header-container {
     display: flex;
     flex-direction: column;
@@ -144,3 +150,31 @@
   .edu-years {
     font-weight: 600;
   }
+
+    /* Experience Section */
+  .experience-entry-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-size: 14px;
+  }
+
+  .experience-entry-container p {
+    color: var(--foreground);
+  }
+
+  .exp-top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .exp-years {
+    font-weight: 600;
+  }
+
+  .experience-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+

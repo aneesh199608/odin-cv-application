@@ -5,25 +5,25 @@ export default function ExperienceForm( { data, onChange, setStep }) {
         onChange([
             ...data,
             {
-                id: Date.now(),
-                degree: '',
-                college: '',
+                id: Date.now() + 1,
+                jobRole: '',
+                company: '',
                 from: '',
                 to: '',
-                city: ''
+                location: ''
             }
         ]);
     }
 
     const update = (id, field, value) =>
         onChange(
-            data.map((edu) =>
-            edu.id === id ? {...edu, [field]: value } : edu
+            data.map((exp) =>
+            exp.id === id ? {...exp, [field]: value } : exp
         )
         );
 
     const remove = (id) => {
-        onChange(data.filter((edu) => edu.id !== id ));
+        onChange(data.filter((exp) => exp.id !== id ));
     };
 
     return (
