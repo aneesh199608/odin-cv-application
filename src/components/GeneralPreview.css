@@ -2,12 +2,12 @@
     width: 794px;
     height: 1123px;
     border-radius: 20px;
-    padding: 32px;
+    padding: 12px;
     box-sizing: border-box;
     font-family: var(--font-sans);
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 16px;
     margin: 0 auto; /* center on page */
     overflow: hidden; /* hide overflow if needed */
   }
@@ -16,13 +16,28 @@
     background-color: #E5F4FF; /* light blue */
     display: flex;
     flex-direction: column;
-    border-radius: 20px;
-    padding: 8px;
+    border-radius: 12px;
+    padding: 12px;
     text-align: center;
     font-family: var(--font-sans);
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 16px;
+  }
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0;
+  }
+
+
+
+  .preview-main {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
   
   .header-fullName {
@@ -30,13 +45,15 @@
     font-weight: 700;
     color: var(--foreground);
     margin: 0;
+    height: 32px;
   }
   
   .header-jobTitle {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--foreground);
     margin: 0;
+    height: 16px;
   }
   
   .header-contact {
@@ -44,8 +61,11 @@
     justify-content: center;
     gap: 32px;
     flex-wrap: wrap;
-    font-size: 14px;
-    color: var(--muted-foreground);
+    font-size: 12px;
+  }
+
+  .header-contact > p {
+    color: var(--foreground);
   }
   
   /* Summary Section (Optional) */
@@ -54,14 +74,14 @@
     margin-top: 24px;
   }
   
-  .summary-title {
+  .expedu-title {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 8px;
   }
   
-  .summary-text {
+  .section-heading {
     font-size: 16px;
     font-weight: 600;
     color: var(--foreground);
@@ -75,3 +95,52 @@
     margin: 0;
   }
   
+  .expedu-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+  }
+
+  .education-entry {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 14px;
+    color: var(--foreground);
+  }
+
+  .education-entry p {
+    margin: 0;
+    color: var(--foreground);
+  }
+  
+  .education-entry strong {
+    color: var(--foreground);
+  }
+
+  .education-entry-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .edu-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .edu-right {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  .edu-years {
+    font-weight: 600;
+  }
