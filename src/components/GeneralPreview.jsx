@@ -35,12 +35,34 @@ export default function GeneralPreview({ data }) {
                                 <div key={edu.id} className="education-entry">
                                     <div className="edu-left">
                                         <p><strong>{edu.degree}</strong>, {edu.college}</p>
-                                        <p className="edu-years">{edu.from} - {edu.to}</p>
+                                        <p>{edu.score}</p>
+                                        
                                     </div>
                                     <div className="edu-right">
-                                        <p>{edu.score}</p>
+                                        <p className="edu-years">{edu.from} - {edu.to}</p>
+                                        
                                         <p>{edu.location}</p>
                                     </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    )}
+
+                    {data.experience.length > 0 && (
+                    <div className="preview-section section3">
+                        <div className="expedu-title">
+                            <h5 className="section-heading">Experience</h5>
+                        </div>
+                        <div className="experience-entry-container">
+                            {data.experience.map((exp) => (
+                                <div key={exp.id} className="experience-entry">
+                                        <div className="exp-top">
+                                            <p><strong>{exp.jobRole}</strong>, {exp.company}</p>
+                                            <p className="exp-years">{exp.from} - {exp.to}</p>
+                                        </div>
+                                        <p className="summary-description">{exp.summary}</p>
+                                        
                                 </div>
                             ))}
                         </div>
