@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { sampleData } from './components/sampleData';
 import './style.css';
 import './components/EducationForm.css';
 import './components/GeneralPreview.css';
@@ -16,6 +17,10 @@ export default function App() {
     experience: [{ id: Date.now() + 1, jobRole: '', company: '', from: '', to: '', location: '', summary: '' }],
     theme: { headerColor: '#ccefff'}
   });
+
+  useEffect(() => {
+    setResume(sampleData);
+  }, []);
 
   const [step, setStep] = useState('0');
 
