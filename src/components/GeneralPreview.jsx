@@ -1,6 +1,12 @@
 import { useEffect, useState, useRef } from 'react';
 import { sampleData } from './sampleData';
 
+import htmlToPdfmake from 'html-to-pdfmake';
+import pdfMake from 'pdfmake/build/pdfmake';
+import { vfs } from 'pdfmake/build/vfs_fonts';
+
+pdfMake.vfs = vfs;
+
 export default function GeneralPreview({ data, setResume }) {
     console.log('Rendering Preview');
 
@@ -25,9 +31,42 @@ export default function GeneralPreview({ data, setResume }) {
     }, []);
 
     const handleDownload = () => {
-        window.print();
-      };
-
+        const element = document.querySelector('.preview');
+      
+        // Clone the resume element without transforming or styling it
+        const cloned = element.cloneNode(true);
+        cloned.style.transform = 'none';
+        cloned.style.width = '794px';
+        cloned.style.height = '1123px';
+        cloned.style.border = 'none';
+      
+        // Append to a hidden container for html-to-pdfmake processing
+        const hiddenContainer = document.createElement('div');
+        hiddenContainer.style.position = 'absolute';
+        hiddenContainer.style.left = '-9999px';
+        hiddenContainer.appendChild(cloned);
+        document.body.appendChild(hiddenContainer);
+      
+        // Convert to PDFMake structure
+        const html = cloned.outerHTML;
+        const pdfContent = htmlToPdfmake(html); // no style copying
+      
+        // Create and download PDF
+        const docDefinition = {
+          content: pdfContent,
+          pageSize: 'A4',
+          pageMargins: [40, 40, 40, 40],
+          defaultStyle: {
+            font: 'Roboto'
+          }
+        };
+      
+        pdfMake.createPdf(docDefinition).download('resume.pdf');
+      
+        document.body.removeChild(hiddenContainer);
+      };           
+                     
+      
     const handleLoadSample = () => {
         sessionStorage.setItem('resume-data', JSON.stringify(sampleData));
         setResume(sampleData);
