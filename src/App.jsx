@@ -64,7 +64,7 @@ export default function App() {
         </div>
 
         <div className="preview-column">
-          <GeneralPreview data={resume} />
+        <GeneralPreview data={resume} setResume={setResume} />
         </div>
       </div>
     </>

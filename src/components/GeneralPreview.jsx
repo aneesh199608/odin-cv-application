@@ -1,15 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
+import { sampleData } from './sampleData';
 
-export default function GeneralPreview({ data }) {
+export default function GeneralPreview({ data, setResume }) {
     console.log('Rendering Preview');
 
     const [scale, setScale] = useState(1);
+    const toolbarRef = useRef(null);
 
     useEffect(() => {
         const handleResize = () => {
-            const availableHeight = window.innerHeight - 32;
-            const scaleFactor = Math.min(availableHeight / 1123, 1);
-            setScale(scaleFactor);
+            const toolbarHeight = toolbarRef.current?.offsetHeight || 0;
+            const gap = 16;
+            const padding = 32;
+            const resumeHeight = 1123;
+            
+            const availableHeight = window.innerHeight - toolbarHeight - gap - padding;
+            const scaleFactor = Math.min(availableHeight / resumeHeight, 1);
+            setScale(Math.max(0.1, scaleFactor));
         };
 
         handleResize();
@@ -17,13 +24,39 @@ export default function GeneralPreview({ data }) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
+    const handleDownload = () => {
+        window.print();
+      };
+
+    const handleLoadSample = () => {
+        sessionStorage.setItem('resume-data', JSON.stringify(sampleData));
+        setResume(sampleData);
+      };
+
+      const handleClear = () => {
+        sessionStorage.removeItem('resume-data');
+        setResume({
+          general: { fullName: '', jobTitle: '', email: '', phone: '', location: '', summary: '' },
+          education: [],
+          experience: [],
+          theme: { headerColor: '#ccefff' }
+        });
+      };
+
     return (
         <div className="preview-wrapper">
+            <div className="preview-toolbar" ref={toolbarRef}>
+                <button onClick={handleDownload}>Download PDF</button>
+                <button onClick={handleLoadSample}>Load Sample</button>
+                <button onClick={handleClear}>Clear All</button>
+            </div>
+
             <div
                 className="preview-scale-container"
-                style={{ transform: `scale(${scale})` }}
-            >
-                <div className="preview">
+                >
+                <div className="preview"
+                style={{ transform: `scale(${scale})`,  transformOrigin: 'top center', height: '1123px', }}
+                >
                     <div className="preview-header">
                         <div className="header-container">
                             <h2 className="header-fullName">{data.general.fullName}</h2>
