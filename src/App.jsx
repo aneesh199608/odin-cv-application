@@ -3,12 +3,14 @@ import { sampleData } from './components/sampleData';
 import './style.css';
 import './components/EducationForm.css';
 import './components/GeneralPreview.css';
+import './components/CustomizeForm.css';
 import BasicDetailsForm from './components/BasicDetailsForm';
 import GeneralPreview from './components/GeneralPreview';
 import FormHeader from './components/FormHeader';
 import SectionToggle from './components/SectionToggle';
 import EducationForm from './components/EducationForm';
 import ExperienceForm from './components/ExperienceForm';
+import CustomizeForm from './components/CustomizeForm';
 
 const SESSION_KEY = 'resume-data';
 
@@ -57,6 +59,16 @@ export default function App() {
               data={resume.experience}
               onChange={(experience) =>
                 setResume({...resume,experience: experience})
+              }
+              setStep = {setStep}
+            />
+          )}
+
+          {step === '3' && (
+            <CustomizeForm
+              data={resume.theme}
+              onChange={(theme) =>
+                setResume({...resume, theme})
               }
               setStep = {setStep}
             />

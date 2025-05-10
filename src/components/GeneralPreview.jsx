@@ -96,7 +96,9 @@ export default function GeneralPreview({ data, setResume }) {
                 <div className="preview"
                 style={{ transform: `scale(${scale})`,  transformOrigin: 'top center', height: '1123px', }}
                 >
-                    <div className="preview-header">
+                    <div className="preview-header"
+                        style={{ backgroundColor: data.theme?.headerColor || '#E5F4FF'}}
+                    >
                         <div className="header-container">
                             <h2 className="header-fullName">{data.general.fullName}</h2>
                             <h4 className="header-jobTitle">{data.general.jobTitle}</h4>
